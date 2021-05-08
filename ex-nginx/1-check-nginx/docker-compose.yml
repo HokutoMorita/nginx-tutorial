@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  nginx_sample_1:
+    build: .
+    container_name: nginx_sample_1
+    ports: 
+      - 8085:80
+    volumes:
+      - ./deploy:/etc/nginx/conf.d
+      - ./build:/var/www/ex_nginx/build
+    tty: true
